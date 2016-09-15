@@ -1,0 +1,42 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12720\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 adding a new conversion:\
+\
+start by giving your conversion a short, two letter name. For example, USD to Sterling Pound = DS. \
+in line 7, add the following algorithm after \'91ED\'92: 1.12:\
+	, \'91(two letter code)\'92: (exchange rate)\}\
+\
+then, add the exchange to the command list by using the following line of code:\
+	print(\'93\'91two letter code\'92 for (exchange);\'94)\
+add this under \
+	print("'ED' for Euro to United State Dollar;")\
+\
+then you need to define your function. use this algorithm as a template:\
+	def twolettercode():\
+	print(\'93conversion: rate of 1 to exchange currency\'94)\
+	y = float(input(\'93current currency: currency symbol\'94))\
+	print("\'a3", y, "-> currency symbol you\'92re converting into\'94, '%.2f' % (y*rates[\'91two letter code\'92]))\
+add this under \
+	def ED():\
+        print("Euro to USD Rate: 1.12")\
+        y = float(input("Euro: \'80"))\
+        print("\'80", y, "-> $", '%.2f' % (y*rates['ED']))\
+\
+finally, you need to add an if statement at the bottom\
+	if i == \'91whatever your command said\'92:\
+		function name()\
+\
+\
+\
+changing an exchange rate:\
+\
+simply alter the x.yz in the rates dictionary\
+	rates = \{'SE': 1.18, 'ES': 0.85, 'DS': 0.76, 'SD': 1.32, 'DE': 0.89, 'ED': 1.12\}\
+if the rate for pounds to euros changes to 1.30, id change it to look at this:\
+	rates = \{'SE': 1.30, 'ES': 0.85, 'DS': 0.76, 'SD': 1.32, 'DE': 0.89, 'ED': 1.12\}\
+\
+}
